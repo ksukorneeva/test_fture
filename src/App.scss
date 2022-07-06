@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1920px;
+    background: rgba(
+        166,
+        133,
+        117,
+        0.9
+    ); //#a68575; //#dfc99a; //#eaddcc; //rgb(6, 8, 34);
+    font-family: sans-serif;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1170px;
+    padding: 0 15px;
+}

@@ -1,0 +1,46 @@
+.form-field {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-field input {
+    width: 100%;
+    background: #eaddcc;
+    border: 1px solid #371809;
+    color: #000;
+    font-size: 20px;
+    padding: 10px 50px 10px 10px;
+    outline: none;
+    border-radius: 7px;
+}
+
+.form-field label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    -webkit-transition: 0.15s;
+    transition: 0.15s;
+    pointer-events: none;
+}
+
+.form-field svg {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.form-field input:focus ~ label,
+.form-field input:not(:placeholder-shown) ~ label {
+    top: -7px;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 0 5px;
+    border: 1px solid #371809;
+    border-radius: 7px;
+}

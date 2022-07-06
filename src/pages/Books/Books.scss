@@ -1,0 +1,125 @@
+.books {
+    width: 100%;
+    margin-bottom: 20px;
+
+    &__count {
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+    }
+
+    .list {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+
+        &-item {
+            background: #fff;
+            padding: 10px;
+            border-radius: 7px;
+            cursor: pointer;
+
+            &:hover {
+                .list-item__title {
+                    color: rgb(60, 145, 60);
+                }
+            }
+
+            &__img {
+                width: 100%;
+                height: 200px;
+                border: 1px solid #ccc;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            &__category {
+                color: #afadad;
+                margin: 10px 0 5px;
+                position: relative;
+
+                width: auto;
+
+                // &::before {
+                //     content: '';
+                //     position: absolute;
+                //     bottom: -1px;
+                //     left: 0;
+                //     width: 100%;
+                //     height: 1px;
+                //     background: #afadad;
+                // }
+            }
+
+            &__title {
+                font-size: 22px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            &__authors {
+                color: #afadad;
+                font-size: 14px;
+            }
+        }
+    }
+    button {
+        padding: 10px 25px;
+        border: none;
+        outline: none;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #fff;
+        background: rgb(18, 94, 59);
+        border-radius: 7px;
+        cursor: pointer;
+        transition: 0.15s;
+        margin: 30px auto;
+        display: block;
+
+        &:hover {
+            background: rgb(31, 159, 106);
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+    .list {
+        grid-template-columns: repeat(3, 1fr) !important;
+        &-item {
+            &__title {
+                font-size: 20px !important;
+            }
+            &__category {
+                font-size: 16px !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .list {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 540px) {
+    .list {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
