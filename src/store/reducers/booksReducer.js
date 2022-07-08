@@ -2,8 +2,14 @@
 const ADD_BOOKS = 'ADD_BOOKS';
 const APPEND_BOOKS = 'APPEND_BOOKS';
 const SORT_CATEGORY = 'SORT_CATEGORY';
+const SORT_SORTS = 'SORT_SORTS';
 
-const initialState = { books: [], totalResults: 0, sortNameCategory: 'all' };
+const initialState = {
+    books: [],
+    totalResults: 0,
+    sortNameCategory: 'all',
+    sorts: 'relevance',
+};
 
 export function booksReducer(state = initialState, action) {
     switch (action.type) {
@@ -13,6 +19,8 @@ export function booksReducer(state = initialState, action) {
             return { ...state, books: state.books.concat(action.payload) };
         case SORT_CATEGORY:
             return { ...state, sortNameCategory: action.payload };
+        case SORT_SORTS:
+            return { ...state, sorts: action.payload };
         // case SORT_CATEGORY
         // case SORT_CATEGORY
         default:
@@ -27,4 +35,8 @@ export const appendBooks = (books) => ({ type: APPEND_BOOKS, payload: books });
 export const sortCategory = (category) => ({
     type: SORT_CATEGORY,
     payload: category,
+});
+export const sortSorts = (sorts) => ({
+    type: SORT_SORTS,
+    payload: sorts,
 });

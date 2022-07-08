@@ -10,7 +10,8 @@ const Header = ({
     keyPress,
     categories,
     sorts,
-    chooseCategory,
+    sortCategoryHandler,
+    sortSortsHandler,
 }) => {
     return (
         <header className='header'>
@@ -25,9 +26,13 @@ const Header = ({
                 <Dropdown
                     arr={categories}
                     title='Categories'
-                    chooseHandler={chooseCategory}
+                    sortCategoryHandler={sortCategoryHandler}
                 />
-                <Dropdown arr={sorts} title='Sorts' />
+                <Dropdown
+                    arr={sorts}
+                    title='Sorts'
+                    sortSortsHandler={sortSortsHandler}
+                />
             </div>
         </header>
     );

@@ -1,36 +1,13 @@
-import React, { useCallback, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Books.scss';
 import noimg from '../Bookdetail/img/noimg.jpeg';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import IsLoading from '../../components/UI/IsLoading/IsLoading';
-import { addBooks } from '../../store/reducers/booksReducer';
 
 const Books = ({ result, click, loading, loadingButton }) => {
     const navigate = useNavigate();
     const books = useSelector((state) => state.books.books);
-    const categoryName = useSelector((state) => state.books.sortNameCategory);
-    const booksCopy = [...books];
-    const dispatch = useDispatch();
-
-    const sortCategoryHandler = (name) => {
-        const newBooks = books.filter(
-            (book) =>
-                book.volumeInfo.categories?.join('').toLowerCase() === name
-        );
-        return dispatch(addBooks(newBooks));
-    };
-    console.log(books);
-
-    // if (categoryName !== 'all') {
-    //     sortCategoryHandler(categoryName);
-    // }
-
-    // useEffect(() => {
-    //     if (categoryName !== 'all') {
-    //         sortCategoryHandler(categoryName);
-    //     }
-    // }, [categoryName, sortCategoryHandler]);
 
     if (loading) {
         return <IsLoading />;
@@ -57,6 +34,12 @@ const Books = ({ result, click, loading, loadingButton }) => {
                                                 ?.thumbnail || noimg
                                         }
                                         alt='img'
+                                        className={
+                                            book?.volumeInfo?.imageLinks
+                                                ?.thumbnail
+                                                ? ''
+                                                : 'noimg'
+                                        }
                                     />
                                 </div>
                                 <p className='list-item__category'>

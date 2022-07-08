@@ -15,7 +15,7 @@
         grid-gap: 10px;
 
         &-item {
-            background: #fff;
+            background: #eaddcc;
             padding: 10px;
             border-radius: 7px;
             cursor: pointer;
@@ -29,15 +29,22 @@
             &__img {
                 width: 100%;
                 height: 200px;
-                border: 1px solid #ccc;
+                // border: 1px solid #ccc;
                 display: flex;
                 justify-content: center;
                 align-items: center;
 
                 img {
-                    width: 100%;
-                    height: 100%;
+                    // width: 100%;
+                    // height: 100%;
                     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+                    object-fit: contain;
+
+                    &.noimg {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
 
@@ -78,7 +85,7 @@
         text-transform: uppercase;
         letter-spacing: 3px;
         color: #fff;
-        background: rgb(18, 94, 59);
+        background: #371809;
         border-radius: 7px;
         cursor: pointer;
         transition: 0.15s;
@@ -86,9 +93,17 @@
         display: block;
 
         &:hover {
-            background: rgb(31, 159, 106);
+            background: #eaddcc;
+            color: #371809;
         }
     }
+}
+h1 {
+    padding-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+    -webkit-text-stroke: 1px #371809;
 }
 
 @media (max-width: 1200px) {
